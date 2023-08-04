@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/checkout.css">
+    <title>Checkout page</title>
+      <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+
+
+
+  <div class="navbar">
+    <div class="logo">Nav Bar for the Checkout</div>
+    <ul class="navbar-menu">
+
+    </ul>
+  </div>
+
+
+
+  <!-- Dummy Payment Details -->
+  <div class="payment-details">
+    <h2>Order Summary</h2>
+    <p>Name:</strong> John Doe</p>
+    <p th:text="'totalCost: $' + ${totalCost}">$0.00</p>
+    <p>Shipping Address: 1234 Elm Street, Anytown, USA</p>
+  </div>
+
+
+      <form th:action="@{/pay}" method="post" class="checkout-form" id="submit">
+
+        <label for="card">Card Number</label>
+        <input type="text" id="card" name="card" required>
+
+        <label for="expiry">Expiry Date</label>
+        <input type="text" id="expiry" name="expiry" required>
+
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" name="cvv" required>
+
+        <button type="submit">Place Order</button>
+      </form>
+
+
+
+
+      
+
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="/css/index.css">
+<!-- if using spring security you must use relative path /css/index.css we assume that you will now create a folder /static/css/ -->
+<meta charset="UTF-8">
+<title>Registration and Login System</title>
+</head>
+<body>
+
+	<nav class="navbar">
+		<div class="nav-links">
+			<a href="/index">Registration and Login System</a> 
+			<a href="/products">Buy products</a>
+			<a href="#contact">Contact</a> 
+			<a href="#endpoint">endpoint</a>
+		</div>
+		<!-- if user is logged in-->
+		<div th:if="${userLoggedIn}">
+			<div class="dropdown">
+				<!-- Use the 'username' model attribute -->
+				<button class="login-btn">
+					Welcome, <span th:text="${username}"></span>
+				</button>
+				<div class="dropdown-content">
+					<a href="#profile">Profile</a> <a href="#settings">Settings</a> <a
+						href="/logoff">Logoff</a>
+				</div>
+			</div>
+		</div>
+		<!-- if user is not logged in -->
+		<div th:unless="${userLoggedIn}">
+			<a href="/login" class="loginlink">Login</a>
+		</div>
+
+	</nav>
+
+	<main>
+		<div class="content">
+			<h1>This is the homepage </h1>
+			<p class="text-center" th:text="'Welcome ' + ${username}">Welcome
+				to the page(you are not logged in yet)</p>
+		</div>
+	</main>
+
+
+
+</body>
+</html>

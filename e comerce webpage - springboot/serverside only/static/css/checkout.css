@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* Navbar */
+    .navbar {
+      background-color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 19px 40px; /* Increase the padding on top and bottom to make the container larger */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #333333;
+    }
+
+    .navbar-menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .navbar-menu li {
+      margin-left: 20px;
+    }
+
+    .navbar-menu li a {
+      text-decoration: none;
+      color: #333333;
+      font-size: 18px;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .navbar-menu li a:hover {
+      background-color: #f5f5f5;
+    }
+
+
+nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+
+/* Payment Details */
+.payment-details {
+  margin-top: 20px;
+  padding: 20px;
+
+}
+
+/* Checkout Form */
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 20px 20px 20px 0; /* Updated margin to move the form to the left */
+  padding: 20px;
+
+}
+
+.checkout-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.checkout-form input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #dddddd;
+}
+
+.checkout-form button {
+  background-color: #333333;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+   border-radius: 5px; /* Rounded corners added */
+}
+
+.checkout-form button:hover {
+  background-color: #555555;
+}
+
+.checkout-form button:active {
+  background-color: #111111;
+}

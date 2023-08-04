@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  display: flex;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+a:hover {
+  background-color: #f8f8f8;
+  color: #111;
+}
+
+/* Additional styles to make the login link look like a button */
+.login-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green color */
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-right: 10px; /* Add some right margin to create space from the edge */
+}
+
+.login-btn:hover {
+  background-color: #45a049; /* Darker green color on hover */
+}
+
+
+main {
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+}
+
+/* Updated styles for the dropdown button */
+.dropbtn {
+  color: #333;
+  text-decoration: none;
+  padding: 5px 10px; /* Adjusted padding here */
+  border-radius: 5px;
+  transition: 0.2s;
+  background-color: #fff; /* Change the background color to white */
+  border: none; /* Remove the border */
+  cursor: pointer;
+}
+
+.dropbtn:hover {
+  background-color: #f1f1f1; /* Lighter background color on hover */
+  color: #111;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

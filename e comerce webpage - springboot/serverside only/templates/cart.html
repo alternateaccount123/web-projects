@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" type="text/css" href="/css/cart.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">Your Brand</div>
+	       <form class="search-container" th:action="@{/search}" method="get"> 
+            <input type="text" name="query" id="searchInput" placeholder="Enter your search query" class="search-input">
+            <button type="submit" id="searchButton">
+                <img th:src="${mySearchIcon}" alt="Magnifier" width="20" height="20">
+            </button>
+            </form>
+    <ul class="navbar-menu">
+      <li><a href="/index">Home</a></li>
+      <li><a href="/products">Shop</a></li>
+      <li><a href="/cart/list">Cart</a></li>
+      <li><a href="#">Account</a></li>
+    </ul>
+  </div>
+  <!-- Secondary Navbar -->
+  <div class="secondary-navbar">
+    <a href="#">Category 1</a>
+    <a href="#">Category 2</a>
+    <a href="#">Category 3</a>
+    <a href="#">Category 4</a>
+  </div>
+
+		
+	<main>
+		<div class="search-results">  
+		    
+		    <div class="product-cards-container">
+			    <div th:each="cartItem : ${cartItems}" class="product-card">
+			        <img th:src="${cartItem.product.imageUrl}" alt="Item" th:alt="${cartItem.product.name}">
+			        <div class="product-details">
+			            <h3 class="item-title" th:text="'product: ' + ${cartItem.product.name}">Item Title</h3>
+			            <p class="item-price" th:text="'price: $' + ${ cartItem.product.price}">$20.00</p>
+			            <p class="item-description" th:text="'description: ' + ${cartItem.product.description}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit vel mi venenatis blandit.</p>
+			            <p class="item-quantity" th:text="'quantity: ' + ${cartItem.quantity}">Quantity: 1</p>
+			            
+			            
+			           
+					    <form th:action="@{/cart/remove}" method="post">
+					      <input type="hidden" name="cartItemId" th:value="${cartItem.cart_item_id}" /> 
+				          <button type="submit" class="hyperlink-button" >Remove</button>
+			            </form>
+			            
+			            
+			          
+			        </div>        
+			    </div>
+		    </div>      
+	    
+	    
+	    	<!-- Subtotal and Checkout Cart Button -->
+		    <div class="subtotal-checkout">
+			     <p>Subtotal: $<span th:text="${subtotal}">0.00</span></p>	
+			    <!--<p>Subtotal: $<span th:text="${subtotal != null} ? ${subtotal} : '0.00'">0.00</span></p> -->
+			    <a th:href="@{/checkout}" class="checkout-link" >Go to Checkout</a>	    <!-- sole purpose is to go to an endpoint no process nothing-->	            
+			    <form th:action="@{/cart/clear}" method="post">
+		            <button type="submit" >Clear Cart</button>
+	            </form>
+            
+		    </div> 
+		    
+		 </div>
+	</main>
+    <footer>
+    <!-- Your website footer goes here -->
+    <p>&copy; 2023 Your E-commerce Website. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

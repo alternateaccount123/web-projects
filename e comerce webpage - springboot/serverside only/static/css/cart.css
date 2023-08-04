@@ -1,0 +1,291 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, input, button {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Set background color and text color */
+body {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Header styles */
+header {
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 24px;
+}
+
+nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Main styles */
+main {
+  padding: 75px; /*main gap*/
+}
+
+.search-results {
+  display: flex;
+  flex-wrap: wrap; /* Wrap elements to new lines if necessary */
+  gap: 20px; /* Add gap between product cards */
+}
+
+.product-card {
+  display: flex; /* Use flexbox for layout */
+  border: 1px solid #ddd;
+  /* padding: 15px; */
+  margin-bottom: 20px; /* Add some margin between cards */
+  /*margin-left: 25px;  idk ...*/
+  width: 600px; /* Adjust the width to your desired size */
+}
+
+.product-card img {
+  width: 150px; /* Adjust the width to your desired size */
+  height: 150px; /* Adjust the height to your desired size */
+  object-fit: cover;
+  margin-right: 20px; /* Add some space between image and details */
+}
+
+
+
+.product-details {
+  flex: 1; /* Take remaining space in the flex container */
+  margin-top: 10px; /* Add margin to the top to move it down */
+}
+
+
+
+
+.product-details h3 {
+  font-size: 18px;
+  margin: 0 0 5px 0; /* Adjust the margin for better spacing */
+}
+
+.product-details p {
+  font-size: 16px;
+  color: #888;
+  margin: 0 0 8px 0; /* Adjust the margin for better spacing */
+}
+
+.product-details label {
+  font-size: 16px;
+  margin: 0; /* Adjust the margin for better spacing */
+}
+
+.product-details input[type="number"] {
+  width: 40px;
+  padding: 3px;
+  margin: 0 5px 0 0; /* Adjust the margin for better spacing */
+}
+
+/* Style for Subtotal and Checkout Cart Button */
+.subtotal-checkout {
+  flex: 1; /* Take remaining space in the flex container */
+}
+
+.subtotal-checkout p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.subtotal-checkout button { /*clear cart button*/
+  margin-top: 15px;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #333;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px; /* Add rounded corners */
+  transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Add smooth transition */
+}
+
+.subtotal-checkout button:hover {  /*clear cart button*/
+
+}
+
+
+.subtotal-checkout {  /*clear cart button*/
+ margin-left: 25px;  /*idk...*/
+}
+
+
+
+
+.checkout-link {  /*go to checkout button*/
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #333; /* Add border to the button */
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.checkout-link:hover { /*go to checkout button*/
+
+}
+
+footer {
+  background-color: #fff; /* Change the footer background to white */
+  color: #333; /* Preserve the footer text color */
+  padding: 10px;
+  text-align: center;
+}
+
+
+
+
+
+    /*navbar*/
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #333333;
+    }
+
+
+
+    .navbar-menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .navbar-menu li {
+      margin-left: 20px;
+    }
+
+    .navbar-menu li a {
+      text-decoration: none;
+      color: #333333;
+      font-size: 18px;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .navbar-menu li a:hover {
+      background-color: #f5f5f5;
+    }
+
+    /* Secondary Navbar Styles */
+    .secondary-navbar {
+      background-color: #ffffff; /* White background */
+      display: flex;
+      justify-content: center;
+      padding: 8px 0;
+      border: 1px solid #ccc; /* Border color */
+      border-radius: 5px;
+    }
+
+    .secondary-navbar a {
+      text-decoration: none;
+      color: #333333;
+      font-size: 14px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .secondary-navbar a:hover {
+      background-color: #e0e0e0;
+    }
+
+
+/*search bar*/
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      margin-left: 20px;
+    }
+
+    .search-input {
+      width: 100%;
+      max-width: 300px;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+#searchButton {
+    background-color: #fff;
+    color: #333;
+    padding: 10px 20px; /* Adjust the padding to make the button larger */
+    font-size: 16px; /* Increase the font size for larger text */
+    border: 1px solid #ccc; /* Add a border to the input field */
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    width: 60px; /* Fixed width for the button */
+    height: 40px; /* Fixed height for the button */
+}
+
+#searchButton img {
+    width: 20px; /* Set the width of the magnifier icon */
+    height: 20px; /* Set the height of the magnifier icon */
+}
+
+/*right side is not rounded and whole thing is longer*/
+#searchInput {
+    padding: 10px; /* Adjust the padding to increase the height of the input field */
+    font-size: 16px; /* Increase the font size for larger text */
+    border: 1px solid #ccc; /* Add a border to the input field */
+    border-radius: 5px 0 0 5px;
+    width: 300px; /* Increase the width of the input field to make it longer */
+}
+
+#searchInput:focus {
+    outline: none; /* Remove the default focus outline */
+    border-color: #b3d4fc; /* Set the highlight color for the border */
+    box-shadow: 0 0 5px #b3d4fc; /* Add a subtle box shadow to enhance the highlight effect */
+}
+
+
+/* Apply styles to make the button look like a hyperlink */
+.hyperlink-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: #007bff; /* Set the desired link color */
+    cursor: pointer;
+}
+
+/* Optionally, remove the underline on hover */
+.hyperlink-button:hover {
+    /*text-decoration: none;*/
+    text-decoration: underline;
+}
+
+
+
+

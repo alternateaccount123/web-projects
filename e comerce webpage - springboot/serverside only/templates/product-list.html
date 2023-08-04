@@ -1,0 +1,102 @@
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/product-list.css">
+    <title>product list</title>
+    
+</head>
+<body>
+
+
+
+
+
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">Your Brand</div>
+	       <form class="search-container" th:action="@{/search}" method="get"> 
+            <input type="text" name="query" id="searchInput" placeholder="Enter your search query" class="search-input">
+            <button type="submit" id="searchButton">
+                <img th:src="${mySearchIcon}" alt="Magnifier" width="20" height="20">
+            </button>
+            </form>
+    <ul class="navbar-menu">
+      <li><a href="/index">Home</a></li>
+      <li><a href="/products">Shop</a></li>
+      <li><a href="/cart/list">Cart</a></li>
+      <li><a href="#">Account</a></li>
+    </ul>
+  </div>
+  <!-- Secondary Navbar -->
+  <div class="secondary-navbar">
+    <a href="#">Category 1</a>
+    <a href="#">Category 2</a>
+    <a href="#">Category 3</a>
+    <a href="#">Category 4</a>
+  </div>
+
+    
+    <!-- display list -->
+    <main>
+    	<div class="search-results">
+    	
+    	
+    	    <!-- Search Results Message Container -->
+      		<div class="search-message">
+       		 <h2>Search Results for "Your Search Query"</h2>
+      		</div>
+    
+            <!-- if query parameter is not provided then display this -->
+			<div class="product-card" th:each="product : ${products}"  th:unless="${query}">
+				<img th:src="${product.imageUrl}" alt="Product" width="200">
+				<h3 th:text="${product.name}">Product Name</h3>
+				<p th:text="'Price: $' + ${product.price}">Price: $0.00</p>
+				<p th:text="'Description: ' + ${product.description}">Description:
+				</p>
+				<p th:text="'Quantity Available: ' + ${product.quantity_available}">Quantity
+					Available:</p>
+				<form th:action="@{/cart/add}" method="post">
+					<input type="hidden" name="productId"
+						th:value="${product.product_id}" /> <input type="number"
+						name="quantity" class="quantity-input" min="1"
+						placeholder="Enter quantity" />
+					<button type="submit" class="add-to-cart">Add to Cart</button>
+				</form>
+			</div>
+
+
+            <!-- if query parameter provided then display this -->
+            <div class="product-card" th:each="product : ${results}"  th:if="${query}">
+				<img th:src="${product.imageUrl}" alt="Product" width="200">
+				<h3 th:text="${product.name}">Product Name</h3>
+				<p th:text="'Price: $' + ${product.price}">Price: $0.00</p>
+				<p th:text="'Description: ' + ${product.description}">Description:
+				</p>
+				<p th:text="'Quantity Available: ' + ${product.quantity_available}">Quantity
+					Available:</p>
+				<form th:action="@{/cart/add}" method="post">
+					<input type="hidden" name="productId"
+						th:value="${product.product_id}" /> <input type="number"
+						name="quantity" class="quantity-input" min="1"
+						placeholder="Enter quantity" />
+					<button type="submit" class="add-to-cart">Add to Cart</button>
+				</form>
+			</div>
+		    
+		    
+    	</div>
+	</main>  
+	
+	
+	
+		
+  	<!-- debug -->
+    <div th:if="${param.query}">
+        <h2>Search Results for '<span th:text="${param.query}"></span>'</h2>
+    </div>
+    
+</body>
+</html>
